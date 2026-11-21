@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JK Pulse | Create Article</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-panel { max-width: 900px; }
+        .article-form { display:grid; gap:18px; }
+        .field { display:grid; gap:8px; }
+        .field label { font-weight:600; font-size:14px; }
+        .field input, .field select, .field textarea {
+            width:100%;
+            padding:12px;
+            border:1px solid #dbe2ea;
+            border-radius:10px;
+            font:inherit;
+            background:white;
+        }
+        .field textarea { min-height:140px; resize:vertical; }
+        .field #content { min-height:300px; }
+        .actions { display:flex; gap:12px; flex-wrap:wrap; }
+        .actions button {
+            padding:12px 18px;
+            border:0;
+            border-radius:10px;
+            cursor:pointer;
+            font-weight:600;
+        }
+        .primary { background:#101827; color:white; }
+        .secondary { background:#e5e7eb; color:#172033; }
+        #message { font-size:14px; }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">JK <span>Pulse</span></div>
+            <nav>
+                <a href="index.html" class="nav-item">Dashboard</a>
+                <a href="articles.html" class="nav-item active">Articles</a>
+                <a href="#" class="nav-item">Categories</a>
+                <a href="#" class="nav-item">Official Sources</a>
+                <a href="#" class="nav-item">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <h1>Create Article</h1>
+                    <p class="subtitle">Prepare content for JK Pulse</p>
+                </div>
+                <button id="logout-btn" style="padding:10px 16px;border:0;border-radius:10px;background:#101827;color:white;cursor:pointer;">Logout</button>
+            </header>
+
+            <section class="panel form-panel">
+                <form id="article-form" class="article-form">
+                    <div class="field">
+                        <label for="title">Article Title *</label>
+                        <input id="title" required maxlength="300" placeholder="Enter article title">
+                    </div>
+
+                    <div class="field">
+                        <label for="summary">Summary</label>
+                        <textarea id="summary" placeholder="Short article description"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="content">Article Content *</label>
+                        <textarea id="content" required placeholder="Write the complete article here"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="category">Category *</label>
+                        <select id="category" required>
+                            <option value="">Loading categories...</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="organization">Organization / Department</label>
+                        <input id="organization" placeholder="e.g. JKSSB">
+                    </div>
+
+                    <div class="field">
+                        <label for="source-url">Source URL</label>
+                        <input id="source-url" type="url" placeholder="https://">
+                    </div>
+
+                    <div class="field">
+                        <label for="pdf-url">Official PDF URL</label>
+                        <input id="pdf-url" type="url" placeholder="https://">
+                    </div>
+
+                    <div class="field">
+                        <label for="application-url">Application URL</label>
+                        <input id="application-url" type="url" placeholder="https://">
+                    </div>
+
+                    <div id="message"></div>
+
+                    <div class="actions">
+                        <button type="submit" class="primary">Save Draft</button>
+                        <button type="button" class="secondary" id="cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="create-article.js"></script>
+</body>
+</html>
