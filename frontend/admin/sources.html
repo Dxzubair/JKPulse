@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JK Pulse | Official Sources</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .source-toolbar {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+            gap:12px;
+            margin-bottom:20px;
+        }
+        .source-toolbar button, .source-form button {
+            padding:12px 18px;
+            border:0;
+            border-radius:10px;
+            background:#101827;
+            color:white;
+            cursor:pointer;
+        }
+        .source-list { overflow-x:auto; }
+        table { width:100%; border-collapse:collapse; min-width:650px; }
+        th,td { padding:14px; text-align:left; border-bottom:1px solid #e5e7eb; }
+        th { color:#64748b; font-size:13px; }
+        .source-form { display:grid; gap:15px; margin-bottom:25px; }
+        .source-form input, .source-form select {
+            padding:12px;
+            border:1px solid #dbe2ea;
+            border-radius:10px;
+            font:inherit;
+            width:100%;
+        }
+        .hidden { display:none; }
+        .action-btn {
+            padding:7px 10px;
+            border:1px solid #dbe2ea;
+            border-radius:8px;
+            background:white;
+            cursor:pointer;
+            margin:3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">JK <span>Pulse</span></div>
+            <nav>
+                <a href="index.html" class="nav-item">Dashboard</a>
+                <a href="articles.html" class="nav-item">Articles</a>
+                <a href="#" class="nav-item">Categories</a>
+                <a href="sources.html" class="nav-item active">Official Sources</a>
+                <a href="#" class="nav-item">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <h1>Official Sources</h1>
+                    <p class="subtitle">Manage trusted information sources</p>
+                </div>
+                <button id="logout-btn" style="padding:10px 16px;border:0;border-radius:10px;background:#101827;color:white;cursor:pointer;">Logout</button>
+            </header>
+
+            <section class="panel">
+                <div class="source-toolbar">
+                    <h2>Source Registry</h2>
+                    <button id="toggle-form">+ Add Source</button>
+                </div>
+
+                <form id="source-form" class="source-form hidden">
+                    <input id="source-name" placeholder="Source name" required>
+                    <input id="source-url" type="url" placeholder="Website URL" required>
+                    <select id="source-type" required>
+                        <option value="">Select source type</option>
+                        <option value="government">Government</option>
+                        <option value="institution">Institution</option>
+                        <option value="news">News</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input id="source-region" placeholder="Region (e.g. Jammu & Kashmir)">
+                    <button type="submit">Save Source</button>
+                    <div id="message"></div>
+                </form>
+
+                <div class="source-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Website</th>
+                                <th>Type</th>
+                                <th>Active</th>
+                                <th>Monitoring</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="source-table-body">
+                            <tr><td colspan="6">Loading sources...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="sources.js"></script>
+</body>
+</html>
