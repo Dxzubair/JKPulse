@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JK Pulse | Categories</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .toolbar {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+            gap:12px;
+            margin-bottom:20px;
+        }
+        .panel form {
+            display:grid;
+            gap:14px;
+            margin-bottom:25px;
+        }
+        .panel form input, .panel form textarea {
+            width:100%;
+            padding:12px;
+            border:1px solid #dbe2ea;
+            border-radius:10px;
+            font:inherit;
+        }
+        .panel form button, .toolbar button {
+            padding:12px 18px;
+            border:0;
+            border-radius:10px;
+            background:#101827;
+            color:white;
+            cursor:pointer;
+        }
+        .hidden { display:none; }
+        .table-wrap { overflow-x:auto; }
+        table { width:100%; border-collapse:collapse; min-width:500px; }
+        th,td { padding:14px; text-align:left; border-bottom:1px solid #e5e7eb; }
+        th { color:#64748b; font-size:13px; }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">JK <span>Pulse</span></div>
+            <nav>
+                <a href="index.html" class="nav-item">Dashboard</a>
+                <a href="articles.html" class="nav-item">Articles</a>
+                <a href="categories.html" class="nav-item active">Categories</a>
+                <a href="sources.html" class="nav-item">Official Sources</a>
+                <a href="#" class="nav-item">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <h1>Categories</h1>
+                    <p class="subtitle">Organize JK Pulse content</p>
+                </div>
+                <button id="logout-btn" style="padding:10px 16px;border:0;border-radius:10px;background:#101827;color:white;cursor:pointer;">Logout</button>
+            </header>
+
+            <section class="panel">
+                <div class="toolbar">
+                    <h2>Category Registry</h2>
+                    <button id="toggle-form">+ Add Category</button>
+                </div>
+
+                <form id="category-form" class="hidden">
+                    <input id="category-name" placeholder="Category name" required>
+                    <input id="category-slug" placeholder="Slug (e.g. exam-preparation)" required>
+                    <textarea id="category-description" placeholder="Description (optional)" rows="3"></textarea>
+                    <button type="submit">Save Category</button>
+                    <div id="message"></div>
+                </form>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Slug</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="category-table-body">
+                            <tr><td colspan="3">Loading categories...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="categories.js"></script>
+</body>
+</html>
