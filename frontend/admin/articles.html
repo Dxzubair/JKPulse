@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JK Pulse | Articles</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .article-toolbar {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:12px;
+            flex-wrap:wrap;
+            margin-bottom:20px;
+        }
+        .article-toolbar button {
+            padding:12px 18px;
+            border:0;
+            border-radius:10px;
+            background:#101827;
+            color:white;
+            cursor:pointer;
+        }
+        .article-list {
+            overflow-x:auto;
+        }
+        table {
+            width:100%;
+            border-collapse:collapse;
+            min-width:600px;
+        }
+        th,td {
+            padding:14px;
+            text-align:left;
+            border-bottom:1px solid #e5e7eb;
+        }
+        th {
+            color:#64748b;
+            font-size:13px;
+        }
+        .status-badge {
+            padding:5px 10px;
+            border-radius:20px;
+            background:#f1f5f9;
+            font-size:12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">JK <span>Pulse</span></div>
+            <nav>
+                <a href="index.html" class="nav-item">Dashboard</a>
+                <a href="articles.html" class="nav-item active">Articles</a>
+                <a href="#" class="nav-item">Categories</a>
+                <a href="#" class="nav-item">Official Sources</a>
+                <a href="#" class="nav-item">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <h1>Articles</h1>
+                    <p class="subtitle">Manage JK Pulse content</p>
+                </div>
+                <button id="logout-btn" style="padding:10px 16px;border:0;border-radius:10px;background:#101827;color:white;cursor:pointer;">Logout</button>
+            </header>
+
+            <section class="panel">
+                <div class="article-toolbar">
+                    <h2>All Articles</h2>
+                    <button id="new-article-btn">+ New Article</button>
+                </div>
+                <div class="article-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th>Verified</th>
+                            </tr>
+                        </thead>
+                        <tbody id="article-table-body">
+                            <tr><td colspan="3">Loading articles...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="articles.js"></script>
+</body>
+</html>
