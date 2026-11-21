@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JK Pulse | Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">JK <span>Pulse</span></div>
+            <nav>
+                <a href="#" class="nav-item active">Dashboard</a>
+                <a href="#" class="nav-item">Articles</a>
+                <a href="#" class="nav-item">Categories</a>
+                <a href="#" class="nav-item">Official Sources</a>
+                <a href="#" class="nav-item">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p class="subtitle">Overview of JK Pulse platform</p><button id="logout-btn" style="padding:10px 16px;border:0;border-radius:10px;background:#101827;color:white;cursor:pointer;">Logout</button>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Articles</h3>
+                    <p id="total-articles">--</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Published</h3>
+                    <p id="published-articles">--</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Drafts</h3>
+                    <p id="draft-articles">--</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Verified</h3>
+                    <p id="verified-articles">--</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Categories</h3>
+                    <p id="total-categories">--</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Sources</h3>
+                    <p id="total-sources">--</p>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2>System Status</h2>
+                <p class="status">Dashboard interface created. API connection pending.</p>
+            </section>
+        </main>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>
